@@ -1,0 +1,24 @@
+{% extends "layouts/master.html" %}
+{% block vista %}Usuarios{% endblock %}
+
+{% block contenido %}
+<header>
+<h1 class= "text-center">Usuarios</h1>
+</header>
+
+<main class="container">
+    <section>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+        <form action="" method="post">
+            {% csrf_token %} <!--se pone siempre con post -->
+            {{ form.as_p }}  
+            <div class="py-3">
+                <button class="btn btn-primary" type="submit">Registrar usuarios</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </section>
+</main>
+{% endblock %}

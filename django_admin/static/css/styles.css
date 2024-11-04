@@ -1,0 +1,29 @@
+/* Estilos para visior de mensajes */
+
+.alert {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+}
+
+
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bcdff1;
+    color: #31708f;
+
+}
+
+.btn-close:hover {
+    color: #0056b3;
+    /* Color al pasar el ratón */
+}

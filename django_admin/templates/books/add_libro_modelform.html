@@ -1,0 +1,38 @@
+{% extends "layouts/master.html" %}
+
+{% block vista %}add_libro_modelform{% endblock %}
+
+{% block contenido %}
+    <header>
+        <h2 class="text-center" >add_libro_modelform</h2>
+    </header>
+    <main class="container">
+        <section >
+            <h2 class="text-center py-3" >Formulario </h2> 
+            <div class="row justify-content-center"> 
+                <div class="col-12 col-md-6 col-lg-4">
+                    <form action="" method="post" > <!--agregamos method, para definir POS/GET, colocar certificado-->
+                        {% csrf_token %}
+                        <div>
+                            {{form.as_p}} <!-- nombre con que enviamos el formulario-->
+                        </div>
+                        <div class ="py-3">
+                            <input type="submit" value="Registrar producto" class="btn btn-primary">
+                        </div>
+                    </form>
+                    {% if messages %}
+                        <div>
+                            {% for message in messages %}
+                                <p class="alert alert-warning">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div> 
+            </div>   
+        </section>
+    </main> 
+        
+        
+
+    
+{% endblock %}

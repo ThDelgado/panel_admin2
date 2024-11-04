@@ -1,0 +1,13 @@
+<section>
+
+    {% comment %} AQUÍ VAMOS A TRATAR LOS MENSAJES DE ÉXITO O ERROR {% endcomment %}
+    {% if  messages %}
+    <div>
+    {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <b>{{message.tags}}!</b> {{message}}
+            </div>
+    {% endfor %}
+    </div>
+    {% endif %}
