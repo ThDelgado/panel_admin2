@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Libros
-from django.http import HttpResponse
+from django.http import request
 from .forms import LibroForm
 from django.forms import ValidationError
 from django.contrib import messages
@@ -9,7 +9,8 @@ from django.contrib import messages
 from django.views.generic import ListView 
 from django.utils import timezone
 from datetime import timedelta, datetime
-
+# restricciones 
+from django.contrib.auth.decorators import login_required 
 
 
 # Create your views here.
@@ -55,7 +56,7 @@ class LibrosView(ListView):
         
         return queryset
 
-                   
+@login_required(login_url='/usuarios/login/')                   
 def add_libro_modelform(request):
 
     if request.method == 'GET':
